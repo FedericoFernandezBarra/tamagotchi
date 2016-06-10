@@ -16,6 +16,10 @@ public class Tamagotchi {
 		estado.jugar();
 	}
 
+	public boolean puedeJugar() {
+		return estado.puedeJugar();
+	}
+
 	public Estado obtenerEstado() {
 		return estado;
 	}

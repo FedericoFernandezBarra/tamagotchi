@@ -18,8 +18,13 @@ public class Contento implements Estado {
 	public void jugar() {
 		tamagotchi.aumentarNivel(2);
 		vecesQueJugo++;
-		if (vecesQueJugo == 5) {
+		if (vecesQueJugo > 5) {
 			tamagotchi.cambiarEstado(new Hambriento(tamagotchi));
 		}
+	}
+
+	@Override
+	public boolean puedeJugar() {
+		return true;
 	}
 }

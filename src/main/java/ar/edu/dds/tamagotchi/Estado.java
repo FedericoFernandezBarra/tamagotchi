@@ -4,4 +4,6 @@ public interface Estado {
 	public void comer();
 
 	public void jugar();
+
+	public boolean puedeJugar();
 }

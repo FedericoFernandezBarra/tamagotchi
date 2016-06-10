@@ -11,7 +11,7 @@ public class MalHumor implements Estado {
 		this.tamagotchi = tamagotchi;
 		tiempoQueComenzoMalHumorado = LocalDateTime.now();
 	}
-	
+
 	public MalHumor(Tamagotchi tamagotchi, LocalDateTime tiempoQueComenzoMalHumorado) {
 		this.tamagotchi = tamagotchi;
 		this.tiempoQueComenzoMalHumorado = tiempoQueComenzoMalHumorado;
@@ -27,6 +27,11 @@ public class MalHumor implements Estado {
 	@Override
 	public void jugar() {
 		tamagotchi.cambiarEstado(new Contento(tamagotchi));
+	}
+
+	@Override
+	public boolean puedeJugar() {
+		return true;
 	}
 
 	public long tiempoQueLlevaMalHumorado() {
