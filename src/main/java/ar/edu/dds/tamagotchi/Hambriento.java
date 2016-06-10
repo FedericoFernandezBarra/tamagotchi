@@ -1,26 +1,27 @@
 package ar.edu.dds.tamagotchi;
 
 public class Hambriento implements Estado {
-	private Tamagotchi tamagotchi;
-
-	public Hambriento(Tamagotchi tamagotchi) {
-		this.tamagotchi = tamagotchi;
-	}
 
 	@Override
-	public void comer() {
-		tamagotchi.cambiarEstado(new Contento(tamagotchi));
+	public void comer(Tamagotchi tamagotchi) {
+		tamagotchi.cambiarEstado(new Contento());
 	}
-	
-	// Una mascota puede jugar si está contenta o aburrida, si está hambrienta no. 
-	
+
+	// Una mascota puede jugar si está contenta o aburrida, si está hambrienta
+	// no.
+
 	// Cuando una mascota juega, pasa lo siguiente:
 	// Se pone de mal humor si esta hambrienta.
 
 	// Se contradice el enunciado?
 	// ¿¿Aburrida?? ¿Cuando aparecio ese estado?
 	@Override
-	public void jugar() {
+	public void jugar(Tamagotchi tamagotchi) {
 		tamagotchi.cambiarEstado(new MalHumor(tamagotchi));
+	}
+
+	@Override
+	public boolean puedeJugar() {
+		return true;
 	}
 }
